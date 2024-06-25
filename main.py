@@ -1,6 +1,7 @@
 import sys 
 import os 
 import pathlib
+import shutil
 
 
 class RawClear:
@@ -64,17 +65,36 @@ class RawClear:
         name = f"{self.folder_name}-raw-clear"
         parts = list(self.path.parts)
         parts[-1] = name
-        # This part will need to redo to handle error for fileExist or fileNotFound 
         try:
-            # attempt to create a new directory 
-            new_path = pathlib.Path(*parts).mkdir()
-            return new_path
+            # attempt to create a new directory if exist else set self.new_path as new path
+            new_path = pathlib.Path(*parts)
+            if new_path.exists():
+                return new_path
+            else:
+                pathlib.Path(*parts).mkdir()
+                return new_path
         except Exception as e: 
             # Handles any errors that occur during directory creation
             print(e)
             return pathlib.Path("Null")
     
+    
+    def tsf_jpg(self):
+        """
+        Transfer JPG files from target directory to the new directory specified
+        """
+        jpg_photos = [p.name for p in self.path.glob("*.jpg")]
         
+        for photo in jpg_photos:
+            # get full path of file from target directory
+            ori_path = self.path.joinpath(photo)
+            # get full path of file from new directory
+            jpg_path = self.new_path.joinpath(photo)
+            shutil.copy(ori_path, jpg_path)
+
+        print("JPG Photos Copied Completed!")
+
+
     def get_var(self):
         """
         print the class variables for debugging purposes.
@@ -83,10 +103,12 @@ class RawClear:
         print(self.parent)
         print(self.folder_name)
         print(self.new_path)
+        
             
 
 if __name__ == '__main__':
     raw_clear = RawClear()
-    raw_clear.get_var()
+    # raw_clear.get_var()
+    raw_clear.tsf_jpg()
 
 

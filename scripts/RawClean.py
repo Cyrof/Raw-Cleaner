@@ -3,6 +3,7 @@ import shutil
 from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm 
 from .config import DEFAULT_FOLDER_NAME
+import logging 
 
 class PathError(Exception):
     """Custom Exception for Path-related errors."""

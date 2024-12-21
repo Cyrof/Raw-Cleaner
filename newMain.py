@@ -1,4 +1,4 @@
-from scripts import setup_logging, parse_arguments
+from scripts.utils import setup_logging, parse_arguments
 from scripts.RawClean import RawClear
 from scripts.config import LOG_FILE
 

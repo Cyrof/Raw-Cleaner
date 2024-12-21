@@ -1,5 +1,6 @@
-from script import RawClear, setup_logging, parse_arguments
-from script.config import LOG_FILE
+from scripts import setup_logging, parse_arguments
+from scripts.RawClean import RawClear
+from scripts.config import LOG_FILE
 
 def main():
     try: 

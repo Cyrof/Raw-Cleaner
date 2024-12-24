@@ -77,6 +77,9 @@ This folder will be located in the same parent directory as the source folder.
 - **Logging**: Detailed logs are saved to `rawclear.log` for debugging and auditing. 
 - **Progress Bar**: Real-time progress updates with `tqdm`. 
 
+## License 
+This project is licensed under the [Apache 2.0](https://github.com/Cyrof/Raw-Cleaner/blob/main/LICENSE)
+
 ## Contributing
 1. Fork the repository. 
 2. Create a feature branch: `git checkout -b feature-branch`

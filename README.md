@@ -1,5 +1,5 @@
 # Raw Cleaner 
-Raw Cleaner is a Python-based tool designed to organise and transfer files from a specified directory to a new destination folder. It allows users to specify file extensions for selective file management. The tol is modular and user-friendly, supporting optional configurations.
+Raw Cleaner is a Python-based tool designed to organise and transfer files from a specified directory to a new destination folder. It allows users to specify file extensions for selective file management. The tool is modular and user-friendly, supporting optional configurations.
 
 ## Folder Structure 
 ```bash 

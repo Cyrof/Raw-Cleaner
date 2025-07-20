@@ -16,6 +16,7 @@ Raw Cleaner is a Python-based tool designed to organise and transfer files from 
 
 ## Prerequisites 
 - Python 3.10+ installed on your system 
+- [uv](https://docs.astral.sh/uv/) package manager installed
 
 ## Installation 
 1. **Clone the Repository**: 
@@ -24,30 +25,15 @@ Raw Cleaner is a Python-based tool designed to organise and transfer files from 
         cd Raw-Cleaner 
     ```
 
-2. **Create a Virtual Environment**: 
-    ``` bash
-        python -m venv <name_of_venv>
-    ```
-
-3. **Activate the Virtual Environment**: 
-    - **Windows**: 
-        ```bash
-            .\<name_of_venv>\Scripts\activate
-        ```
-    - **Linux/Mac**:
-        ```bash 
-            source <name_of_venv>/bin/activate
-        ```
-
-4. **Install Dependencies**:
-    ```bash 
-        pip install -r requirements.txt
+2. **Install Dependencies using `uv`**:
+    ```bash
+    uv sync
     ```
 
 ## Usage 
 Run the application with the following command: 
 ```bash 
-python main.py <path_to_folder> --extensions <ext1 ext2> 
+uv run cleaner <path_to_folder> --extentions <ext1 ext2>
 ```
 ### Arguments: 
 - `<path_to_folder>`: Path to the directory containing the target files. 
@@ -56,11 +42,15 @@ python main.py <path_to_folder> --extensions <ext1 ext2>
 ### Examples:
 - Process only `.jpg` files _(default behavior)_: 
     ```bash 
-        python main.py "/path/to/photos"
+    uv run cleaner "/path/to/photos"
     ```
 - Process `.jpg` and `.png` files: 
     ```bash 
-        python main.py "/path/to/photos" --extensions jpg png
+    uv run cleaner "/path/to/photos" --extensions jpg png
+    ```
+- View help menu:
+    ```bash
+    uv run cleaner -h
     ```
 
 ## Output 
